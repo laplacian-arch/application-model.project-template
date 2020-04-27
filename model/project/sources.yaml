@@ -1,0 +1,11 @@
+project:
+  sources:
+  - "README.md"
+  - ".editorconfig"
+  - ".gitattributes"
+  - ".gitignore"
+  - "model/project/sources.yaml"
+  - "model/project.yaml"
+  - "src/doc/architecture-overview.md"
+  - "src/doc/image/component-diagram.puml.hbs"
+  - "src/doc/local-deployment.md"

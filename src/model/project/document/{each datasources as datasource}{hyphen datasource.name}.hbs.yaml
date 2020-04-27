@@ -1,0 +1,8 @@
+project:
+  document:
+    sections:
+    - title: |
+        {{datasource.name}}
+
+      content: |
+        - **Database**: {{database.type}}

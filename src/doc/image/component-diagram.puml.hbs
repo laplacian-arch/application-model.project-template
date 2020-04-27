@@ -1,0 +1,50 @@
+@startuml
+
+{{#each services as |service| ~}}
+node "API Server" {
+  () REST - [{{hyphen service.name}}]
+  () GraphQL - [{{hyphen service.name}}]
+}
+
+note as rest_note
+  REST resources
+  --
+  {{#each service.resources as |resource| ~}}
+  - {{upper-camel resource.name}} (/api/v1/task_group)
+  {{/each}}
+end note
+{{/each}}
+
+{{#each datasources as |datasource| ~}}
+database "Database" {
+  () JDBC - [{{hyphen datasource.dbname}}]
+}
+note as tables
+  Tables
+  --
+  {{#each datasource.entities as |entity| ~}}
+  - {{lower-snake entity.name}}
+  {{/each}}
+end note
+{{/each}}
+
+actor User
+
+node Browser {
+  [Altair Graphql Client] ..> GraphQL
+  [Swagger Rest UI] ..> REST
+}
+
+User ..> [Altair Graphql Client] : /altair
+User ..> [Swagger Rest UI] : /swagger-ui.html
+{{#each services as |service| ~}}
+rest_note .. [todo-list-service]
+{{#if service.datasource ~}}
+[{{hyphen service.name}}] ..> JDBC
+{{/if}}
+{{/each}}
+{{#each datasources as |datasource| ~}}
+tables .. [{{hyphen datasource.name}}]
+{{/each}}
+
+@enduml

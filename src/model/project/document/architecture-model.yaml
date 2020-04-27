@@ -1,0 +1,7 @@
+project:
+  document:
+    sections:
+    - title: Architecture overview
+      content: |
+        The following diagram illustrates how major components in this system are wired.
+        ![](./doc/image/component-diagram.svg)
