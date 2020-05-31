@@ -1,7 +1,15 @@
+_title: &title
+  en: |
+    Architecture overview
+
+_content: &content
+  en: |
+    The following diagram illustrates how major components in this system are wired.
+    ![](./doc/image/component-diagram.svg)
+
 project:
   document:
     sections:
-    - title: Architecture overview
-      content: |
-        The following diagram illustrates how major components in this system are wired.
-        ![](./doc/image/component-diagram.svg)
+    - name: 'architecture-overview'
+      title: *title
+      content: *content

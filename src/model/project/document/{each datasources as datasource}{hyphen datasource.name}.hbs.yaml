@@ -1,8 +1,14 @@
+_title: &title
+  en: |
+    {{datasource.name}}
+
+_content: &content
+  en: |
+    - **Database**: {{database.type}}
+
 project:
   document:
     sections:
-    - title: |
-        {{datasource.name}}
-
-      content: |
-        - **Database**: {{database.type}}
+    - name: '{{datasource.name}}'
+      title: *title
+      content: *content

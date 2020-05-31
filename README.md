@@ -1,5 +1,5 @@
 <!-- @head-content@ -->
-# laplacian-arch/architecture-document-template
+# laplacian-arch/arch-model.project-template
 
 This template generates a set of documentation of the system architecture defined by the  model.
 
@@ -29,7 +29,7 @@ To apply this Template module, add the following entry to your project definitio
 project:
   templates:
   - group: laplacian-arch
-    name: architecture-document-template
+    name: arch-model.project-template
     version: 1.0.0
 ```
 
@@ -59,7 +59,7 @@ $ ./script/generate
 
 - [./script/generate.sh](<./scripts/generate.sh>)
 
-  Generates The resources in each directory of `src/` `model/` `template/` in this project.
+  Generates the resources in each directory of `src/` `model/` `template/` in this project.
   The results are reflected in each directory of `dest/` `doc/` `script/`.
 
   *Generator input files*
@@ -149,9 +149,6 @@ $ ./script/generate
 ### Source code list
 
 
-- [model/project/scripts/generate.yaml](<./model/project/scripts/generate.yaml>)
-- [model/project/scripts/publish-local.yaml](<./model/project/scripts/publish-local.yaml>)
-- [model/project/sources.yaml](<./model/project/sources.yaml>)
 - [model/project.yaml](<./model/project.yaml>)
 - [src/doc/architecture-overview.md](<./src/doc/architecture-overview.md>)
 - [src/doc/image/component-diagram.puml.hbs](<./src/doc/image/component-diagram.puml.hbs>)
