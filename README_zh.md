@@ -1,7 +1,7 @@
 <!-- @head-content@ -->
-# laplacian-arch/arch-model.project-template
+# laplacian-arch/function-model.project-template
 
-This template generates a set of documentation of the system architecture defined by the  model.
+应用功能模型开发项目的项目模板。
 
 
 *Read this in other languages*: [[English](README.md)] [[日本語](README_ja.md)]
@@ -17,6 +17,8 @@ This template generates a set of documentation of the system architecture define
 
   * [源码列表](#源码列表)
 
+- [Architecture overview](#architecture-overview)
+
 
 
 <!-- @toc@ -->
@@ -30,7 +32,7 @@ This template generates a set of documentation of the system architecture define
 project:
   templates:
   - group: laplacian-arch
-    name: arch-model.project-template
+    name: function-model.project-template
     version: 1.0.0
 ```
 
@@ -119,6 +121,16 @@ $ ./script/generate
   >
   >   当`model/` `template/`目录的内容在生成过程中被更新时，递归执行的次数上限。
   >    (Default: 10)
+  > , --local-module-repository [VALUE]
+  >
+  >   存储本地构建的模块的存储库路径。
+  >   这个存储库中的模块具有最高优先级。
+  >   
+  > , --updates-scripts-only
+  >
+  >   仅更新脚本文件。
+  >   这个选项在项目初始生成时用于生成生成器脚本本身。
+  >   
 - [./script/publish-local.sh](<./scripts/publish-local.sh>)
 
   项目中的资源生成后，在`./dest`目录下的资源作为模板模块建立，并在本地资源库中注册。
@@ -141,15 +153,27 @@ $ ./script/generate
   >
   >   这个选项与[generate.sh](<./scripts/generate.sh>)中的同名选项相同。
   >   
+  > , --local-module-repository [VALUE]
+  >
+  >   到本地存储库的路径。
+  >   如果在指定的路径中不存在存储库，将自动创建。
+  >   
 ### 源码列表
 
 
 - [model/project.yaml](<./model/project.yaml>)
-- [src/doc/architecture-overview.md](<./src/doc/architecture-overview.md>)
-- [src/doc/image/component-diagram.puml.hbs](<./src/doc/image/component-diagram.puml.hbs>)
-- [src/doc/local-deployment.md](<./src/doc/local-deployment.md>)
-- [src/model/project/document/architecture-model.yaml](<./src/model/project/document/architecture-model.yaml>)
-- [src/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml](<./src/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml>)
+- [src/template/doc/architecture-overview.md](<./src/template/doc/architecture-overview.md>)
+- [src/template/doc/image/component-diagram.puml.hbs](<./src/template/doc/image/component-diagram.puml.hbs>)
+- [src/template/doc/local-deployment.md](<./src/template/doc/local-deployment.md>)
+- [src/template/model/project/document/architecture-model.yaml](<./src/template/model/project/document/architecture-model.yaml>)
+- [src/template/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml](<./src/template/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml>)
+
+## Architecture overview
+
+
+The following diagram illustrates how major components in this system are wired.
+![](./doc/image/component-diagram.svg)
+
 
 
 <!-- @main-content@ -->

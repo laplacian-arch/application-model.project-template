@@ -1,21 +1,23 @@
 project:
   group: laplacian-arch
-  name: arch-model.project-template
+  name: function-model.project-template
   type: template
   namespace: laplacian-arch
   version: '1.0.0'
   description:
     en: |
-      This template generates a set of documentation of the system architecture defined by the  model.
+      A project template for application function model development projects.
     ja: |
-      This template generates a set of documentation of the system architecture defined by the  model.
+      このテンプレートはアプリケーション機能モデル開発プロジェクト用のテンプレートです。
     zh: |
-      This template generates a set of documentation of the system architecture defined by the  model.
+      应用功能模型开发项目的项目模板。
   source_repository:
-    url: https://github.com/laplacian-arch/arch-model.project-template.git
+    url: https://github.com/laplacian-arch/function-model.project-template.git
     branch: master
   module_repositories:
     local:
       ../../../mvn-repo
     remote:
     - https://github.com/nabla-squared/mvn-repo
+  template_files:
+  - 'dest/template'

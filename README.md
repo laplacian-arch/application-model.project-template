@@ -1,7 +1,7 @@
 <!-- @head-content@ -->
-# laplacian-arch/arch-model.project-template
+# laplacian-arch/function-model.project-template
 
-This template generates a set of documentation of the system architecture defined by the  model.
+A project template for application function model development projects.
 
 
 *Read this in other languages*: [[日本語](README_ja.md)] [[简体中文](README_zh.md)]
@@ -17,6 +17,8 @@ This template generates a set of documentation of the system architecture define
 
   * [Source code list](#source-code-list)
 
+- [Architecture overview](#architecture-overview)
+
 
 
 <!-- @toc@ -->
@@ -29,7 +31,7 @@ To apply this Template module, add the following entry to your project definitio
 project:
   templates:
   - group: laplacian-arch
-    name: arch-model.project-template
+    name: function-model.project-template
     version: 1.0.0
 ```
 
@@ -122,6 +124,17 @@ $ ./script/generate
   >   when the contents of the `model/` `template/` directory are updated
   >   during the generation process.
   >    (Default: 10)
+  > , --local-module-repository [VALUE]
+  >
+  >   The repository path to store locally built modules.
+  >   The modules in this repository have the highest priority.
+  >   
+  > , --updates-scripts-only
+  >
+  >   Updates script files only.
+  >   This option is used to generate the generator script itself
+  >   when the project is initially generated.
+  >   
 - [./script/publish-local.sh](<./scripts/publish-local.sh>)
 
   After the resources in the project are generated,
@@ -146,15 +159,27 @@ $ ./script/generate
   >
   >   This option is the same as the option of the same name in [generate.sh](<./scripts/generate.sh>).
   >   
+  > , --local-module-repository [VALUE]
+  >
+  >   The path to the local repository where the built module will be stored.
+  >   If the repository does not exist in the specified path, it will be created automatically.
+  >   
 ### Source code list
 
 
 - [model/project.yaml](<./model/project.yaml>)
-- [src/doc/architecture-overview.md](<./src/doc/architecture-overview.md>)
-- [src/doc/image/component-diagram.puml.hbs](<./src/doc/image/component-diagram.puml.hbs>)
-- [src/doc/local-deployment.md](<./src/doc/local-deployment.md>)
-- [src/model/project/document/architecture-model.yaml](<./src/model/project/document/architecture-model.yaml>)
-- [src/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml](<./src/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml>)
+- [src/template/doc/architecture-overview.md](<./src/template/doc/architecture-overview.md>)
+- [src/template/doc/image/component-diagram.puml.hbs](<./src/template/doc/image/component-diagram.puml.hbs>)
+- [src/template/doc/local-deployment.md](<./src/template/doc/local-deployment.md>)
+- [src/template/model/project/document/architecture-model.yaml](<./src/template/model/project/document/architecture-model.yaml>)
+- [src/template/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml](<./src/template/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml>)
+
+## Architecture overview
+
+
+The following diagram illustrates how major components in this system are wired.
+![](./doc/image/component-diagram.svg)
+
 
 
 <!-- @main-content@ -->

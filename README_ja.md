@@ -1,7 +1,7 @@
 <!-- @head-content@ -->
-# laplacian-arch/arch-model.project-template
+# laplacian-arch/function-model.project-template
 
-This template generates a set of documentation of the system architecture defined by the  model.
+このテンプレートはアプリケーション機能モデル開発プロジェクト用のテンプレートです。
 
 
 *Read this in other languages*: [[English](README.md)] [[简体中文](README_zh.md)]
@@ -17,6 +17,8 @@ This template generates a set of documentation of the system architecture define
 
   * [ソースコード一覧](#ソースコード一覧)
 
+- [Architecture overview](#architecture-overview)
+
 
 
 <!-- @toc@ -->
@@ -29,7 +31,7 @@ This template generates a set of documentation of the system architecture define
 project:
   templates:
   - group: laplacian-arch
-    name: arch-model.project-template
+    name: function-model.project-template
     version: 1.0.0
 ```
 
@@ -118,6 +120,16 @@ $ ./script/generate
   >   自動生成処理中に`model/` `template/`ディレクトリの内容が更新された場合に、
   >   再帰的に自動生成処理を実行する回数の上限。
   >    (Default: 10)
+  > , --local-module-repository [VALUE]
+  >
+  >   ローカルでビルドされたモジュールを格納するリポジトリのパス。
+  >   ここに存在するモジュールが最優先で参照されます。
+  >   
+  > , --updates-scripts-only
+  >
+  >   スクリプトファイルのみを更新の対象とします。
+  >   プロジェクトを初期生成する際、自動生成スクリプト自体を初回作成する場合などに指定します。
+  >   
 - [./script/publish-local.sh](<./scripts/publish-local.sh>)
 
   プロジェクト内の資源を自動生成した後、ディレクトリにある資源をテンプレートモジュールとしてビルドし、
@@ -141,15 +153,27 @@ $ ./script/generate
   >
   >   自動生成処理を行わずに、ビルドおよびローカルリポジトリへの登録を行います。
   >   
+  > , --local-module-repository [VALUE]
+  >
+  >   ビルドしたモジュールを格納するローカルリポジトリのパス。
+  >   指定したパスにリポジトリが存在しない場合は、自動的に作成されます。
+  >   
 ### ソースコード一覧
 
 
 - [model/project.yaml](<./model/project.yaml>)
-- [src/doc/architecture-overview.md](<./src/doc/architecture-overview.md>)
-- [src/doc/image/component-diagram.puml.hbs](<./src/doc/image/component-diagram.puml.hbs>)
-- [src/doc/local-deployment.md](<./src/doc/local-deployment.md>)
-- [src/model/project/document/architecture-model.yaml](<./src/model/project/document/architecture-model.yaml>)
-- [src/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml](<./src/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml>)
+- [src/template/doc/architecture-overview.md](<./src/template/doc/architecture-overview.md>)
+- [src/template/doc/image/component-diagram.puml.hbs](<./src/template/doc/image/component-diagram.puml.hbs>)
+- [src/template/doc/local-deployment.md](<./src/template/doc/local-deployment.md>)
+- [src/template/model/project/document/architecture-model.yaml](<./src/template/model/project/document/architecture-model.yaml>)
+- [src/template/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml](<./src/template/model/project/document/{each datasources as datasource}{hyphen datasource.name}.hbs.yaml>)
+
+## Architecture overview
+
+
+The following diagram illustrates how major components in this system are wired.
+![](./doc/image/component-diagram.svg)
+
 
 
 <!-- @main-content@ -->
