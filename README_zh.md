@@ -1,5 +1,5 @@
 <!-- @head-content@ -->
-# laplacian-arch/function-model.project-template
+# laplacian-arch/application-model.project-template
 
 应用功能模型开发项目的项目模板。
 
@@ -32,7 +32,7 @@
 project:
   templates:
   - group: laplacian-arch
-    name: function-model.project-template
+    name: application-model.project-template
     version: 1.0.0
 ```
 

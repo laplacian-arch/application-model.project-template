@@ -1,7 +1,7 @@
 <!-- @head-content@ -->
-# laplacian-arch/function-model.project-template
+# laplacian-arch/application-model.project-template
 
-このテンプレートはアプリケーション機能モデル開発プロジェクト用のテンプレートです。
+このテンプレートはアプリケーションモデル開発プロジェクト用のテンプレートです。
 
 
 *Read this in other languages*: [[English](README.md)] [[简体中文](README_zh.md)]
@@ -31,7 +31,7 @@
 project:
   templates:
   - group: laplacian-arch
-    name: function-model.project-template
+    name: application-model.project-template
     version: 1.0.0
 ```
 

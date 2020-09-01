@@ -1,7 +1,7 @@
 <!-- @head-content@ -->
-# laplacian-arch/function-model.project-template
+# laplacian-arch/application-model.project-template
 
-A project template for application function model development projects.
+A project template for application model development projects.
 
 
 *Read this in other languages*: [[日本語](README_ja.md)] [[简体中文](README_zh.md)]
@@ -31,7 +31,7 @@ To apply this Template module, add the following entry to your project definitio
 project:
   templates:
   - group: laplacian-arch
-    name: function-model.project-template
+    name: application-model.project-template
     version: 1.0.0
 ```
 
